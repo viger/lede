@@ -67,8 +67,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        git clone --depth 1 $REPO_URL -b $POX_REPO_URL openwrt/openwrt-packages
-        git clone --depth 1 $REPO_URL -b $POX_DEP_REPO_URL openwrt/small
+        git clone --depth 1 $POX_REPO_URL -b $REPO_BRANCH openwrt/openwrt-packages
+        git clone --depth 1 $POX_DEP_REPO_URL -b $REPO_BRANCH openwrt/small
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
